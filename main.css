@@ -1,0 +1,22 @@
+.d-block{
+    height: 450px;
+}
+@media (max-width: 767.98px){
+.card{
+    width: 30rem !important;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.card-img-top{
+    border-top-left-radius: calc(0.25rem - 1px) !important;
+    border-bottom-left-radius: calc(0.25rem - 1px) !important;
+}
+}
+
+.frame{
+    height: 400px;
+}
+
+.footer {
+    color: aliceblue;
+}

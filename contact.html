@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">MI-N7</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">A propos</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Contact  <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- la fin de navbar -->
+
+        <iframe class="frame col-12 mx-auto" src="https://www.google.com/maps/place/ENSET+Mohammedia/@33.7045621,-7.3629602,17z/data=!3m1!4b1!4m5!3m4!1s0xda7b6d0db170185:0x79759da1a916fc50!8m2!3d33.7045577!4d-7.3607715"></iframe>
+
+        <div class="col-12 col-sm-10 col-md-8 mx-auto">
+            <div class="mt-6 p-5 bg-white rounded-2 box-shadow-extra-large border">
+              <h2 class="mb-3 f2-light lh-condensed">Contact Services</h2>
+              <form method="post" action="#">
+                
+                <div class="mb-3">
+                  <label for="field0" class="d-inline-block mb-1">Full name</label>
+                  <input id="field0" name="fullName1" type="text" class="form-control form-control-lg input-block" placeholder="First and last name" required="">
+                  <span class="form-control-invalid-text">Your full name is required.</span>
+                </div>
+        
+                <div class="mb-3">
+                  <label for="field1" class="d-inline-block mb-1">email</label>
+                  <input id="field1" name="emailAddress" type="email" class="form-control form-control-lg input-block" placeholder="you@example.com" required="">
+                  <span class="form-control-invalid-text">A valid email address is required.</span>
+                </div>
+        
+                <div class="mb-3">
+                  <label for="field5" class="d-inline-block mb-1">What can we help you with?</label>
+                  <textarea id="field5" name="contactComments" type="text" class="form-control form-control-lg input-block" rows="4" placeholder="Tell us how we can help. For support questions, head to github.com/contact" maxlength="1000" required=""></textarea>
+                  <span class="form-control-invalid-text">A valid comment is required.</span>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Submit</button>
+       </div>
+          </div>
+
+        <div class="footer navbar col-13 bg-dark m-2 ">
+            <span class="mx-auto">all right reserved 2018/2019</span>
+        </div>
+
+      <script src="node_modules/jquery/dist/jquery.min.js"></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="node_modules/poper/dist/poper.js"></script>
+</body>
+</html>
