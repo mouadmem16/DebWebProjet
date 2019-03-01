@@ -30,8 +30,25 @@
       </nav>
       <!-- la fin de navbar -->
 
-        <iframe class="frame col-12 mx-auto" src="https://www.google.com/maps/place/ENSET+Mohammedia/@33.7045621,-7.3629602,17z/data=!3m1!4b1!4m5!3m4!1s0xda7b6d0db170185:0x79759da1a916fc50!8m2!3d33.7045577!4d-7.3607715"></iframe>
-
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13276.678769945602!2d-7.3607715!3d33.7045577!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x79759da1a916fc50!2sENSET+Mohammedia!5e0!3m2!1sar!2sma!4v1550958135259" class="mx-auto col-12 frame"></iframe>
+      <span class="metadata-marker" style="display: none;" data-region_tag="html-body"></span>    
+      <!--The div element for the map -->
+      <div id="map"></div>
+      <script>
+  <span class="metadata-marker" style="display: none;" data-region_tag="script-body"></span>// Initialize and add the map
+  function initMap() {
+    // The location of Uluru
+    var uluru = {lat: -25.344, lng: 131.036};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: uluru, map: map});
+  }
+      </script>
+   
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+      </script>
         <div class="col-12 col-sm-10 col-md-8 mx-auto">
             <div class="mt-6 p-5 bg-white rounded-2 box-shadow-extra-large border">
               <h2 class="mb-3 f2-light lh-condensed">Contact Services</h2>
