@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script>
+        function addTab()
+        {
+            var col = document.getElementById('col').value;
+            var row = document.getElementById('row').value;
+            var tab = '<table style="width:100%">';
+            for (let index = 0; index < row; index++) {
+                tab += "<tr>";
+                    for (let j = 0; j < col; j++) {
+                        tab += '<th>Firstname'+index+'</th>';
+                    }
+                tab += "</tr>";
+            }
+            tab += "</table>";
+            document.write(tab);
+        }
+    </script>
+</head>
+<body>
+    <span> col : <input type="text" id='col'> </span>
+    <span> row : <input type="text" id='row'> </span>
+    <button onclick="addTab()">submit</button>
+</body>
+</html>

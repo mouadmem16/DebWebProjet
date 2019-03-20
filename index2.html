@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <button type="button" class="btn btn-primary my-3 btn-lg btn-block" onclick="toggleShowUser();">Show Toggle Style.</button>
+    <div id="out" style="display:none;">
+    <div class="class1"></div>
+    </div>
+</body>
+        <script>
+        users = [
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "toto",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjjj"
+            },
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "zozo",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjjj"
+            },
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "roro",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjjj"
+            },
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "fofo",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+            },
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "koko",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+            },
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "bobo",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+            },
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "dodo",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+            },
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "jojo",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+            },
+            {
+                pic: "https://lorempixel.com/300/300?11",
+                name: "roro",
+                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+            }
+        ]
+
+        function showUsersKanban(userArray, id) 
+        {
+            var gabari = document.querySelector(id);
+            var divelt = document.createElement("div");
+            divelt.className = "d-flex flex-wrap align-content-around justify-content-around m-5 p-5 class1";
+            divelt.style = " background: olive;";
+            for (key in userArray) {
+                var cadre = document.createElement("div");
+                cadre.innerHTML = '<div class="card m-3" style="width: 18rem;"> '+
+                                  '<img src="'+userArray[key].pic+'" class="card-img-top" alt="...">'+
+                                  '<div class="card-body"><h5 class="card-title">'+userArray[key].name+'</h5>'+
+                                  '<p class="card-text">'+userArray[key].bio+'</p></div></div>';
+                divelt.appendChild(cadre);
+            }
+            if(gabari.hasChildNodes()){
+            var child = document.getElementsByClassName("class1")[0];
+            gabari.removeChild(child);}
+            gabari.append(divelt);
+            gabari.style.display = "inline";
+        }
+
+        function showUsersTable(userArray, id) 
+        {
+            var gabari = document.querySelector(id);
+            var divelt = document.createElement("div");
+            divelt.className = "m-5 p-5 class1";
+            divelt.style = " background: olive;";
+            var html = '<table class="table table-bordered table-hover" style="background:white"><thead>'+
+                        '<tr><th scope="col">full name</th><th scope="col">Biography</th></tr></thead><tbody>';
+            for (key in userArray) {
+                html += '<tr><td>'+userArray[key].name+'</td> <td>'+userArray[key].bio+'</td> </tr>';
+            }
+            html += '</tbody></table>';
+            divelt.innerHTML = html;
+            if(gabari.hasChildNodes()){
+            var child = gabari.getElementsByClassName("class1")[0];
+            gabari.removeChild(child);}
+            gabari.append(divelt);
+            gabari.style.display = "inline";
+        }
+
+            var flagSwitch = true;
+        
+        function toggleShowUser()
+        {
+            if(flagSwitch) {
+                showUsersKanban(users, "#out");
+                flagSwitch = false;
+            }
+            else {
+                showUsersTable(users, "#out");
+                flagSwitch = true;
+            }
+        }
+        
+    </script>
+</html>
