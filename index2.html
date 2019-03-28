@@ -8,57 +8,70 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <button type="button" class="btn btn-primary my-3 btn-lg btn-block" onclick="toggleShowUser();">Show Toggle Style.</button>
+    <button type="button" class="btn btn-primary my-2 btn-lg btn-block" onclick="toggleShowUser();">Show Users.</button>
+    <span style="background: orangered; border-left: red; padding: 5px; color: bisque; display:block; text-align: center;">j'ai fait le mème url dans les images pour ne pas uploader beaucoup et merci.</span>
+    <div id="edit" onclick="" class="mx-auto col-5" style="display: block;">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Le Nom :</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">La Bio : </label>
+            <textarea class="form-control" id="bio" rows="3"></textarea>
+          </div>
+        <button class="btn btn-outline-dark" id="submit">OK</button>
+    </div>
     <div id="out" style="display:none;">
     <div class="class1"></div>
     </div>
+    
 </body>
         <script>
         users = [
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "toto",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             },
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "zozo",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             },
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "roro",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             },
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "fofo",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             },
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "koko",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             },
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "bobo",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             },
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "dodo",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             },
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "jojo",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             },
             {
                 pic: "https://lorempixel.com/300/300?11",
                 name: "roro",
-                bio: "jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj jjjjjj jjjjjjjj jjjjjjjjjj jjjjjjj jjjjjjjj"
+                bio: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia consequuntur illum dolor!"
             }
         ]
 
@@ -73,7 +86,9 @@
                 cadre.innerHTML = '<div class="card m-3" style="width: 18rem;"> '+
                                   '<img src="'+userArray[key].pic+'" class="card-img-top" alt="...">'+
                                   '<div class="card-body"><h5 class="card-title">'+userArray[key].name+'</h5>'+
-                                  '<p class="card-text">'+userArray[key].bio+'</p></div></div>';
+                                  '<p class="card-text">'+userArray[key].bio+'</p>'+
+                                  '<a href="#" class="btn btn-success" onclick="modifyUser('+key+');">Modifier</a></div></div>';
+
                 divelt.appendChild(cadre);
             }
             if(gabari.hasChildNodes()){
@@ -90,9 +105,9 @@
             divelt.className = "m-5 p-5 class1";
             divelt.style = " background: olive;";
             var html = '<table class="table table-bordered table-hover" style="background:white"><thead>'+
-                        '<tr><th scope="col">full name</th><th scope="col">Biography</th></tr></thead><tbody>';
+                        '<tr><th scope="col">Image</th><th scope="col">full name</th><th scope="col">Biography</th><th scope="col">Modifier</th></tr></thead><tbody>';
             for (key in userArray) {
-                html += '<tr><td>'+userArray[key].name+'</td> <td>'+userArray[key].bio+'</td> </tr>';
+                html += '<tr><td><img src="'+userArray[key].pic+'" width=50% alt="..."></td><td>'+userArray[key].name+'</td> <td>'+userArray[key].bio+'</td> <td><a href="#" onclick="modifyUser('+key+');">Modifier</a></td> </tr>';
             }
             html += '</tbody></table>';
             divelt.innerHTML = html;
@@ -103,7 +118,7 @@
             gabari.style.display = "inline";
         }
 
-            var flagSwitch = true;
+        var flagSwitch = true;
         
         function toggleShowUser()
         {
@@ -115,6 +130,22 @@
                 showUsersTable(users, "#out");
                 flagSwitch = true;
             }
+            document.getElementById("edit").style.display = "none";
+        }
+        toggleShowUser();
+
+        function modifyUser(key) {
+            var name = document.getElementById("name");
+            var bio = document.getElementById("bio");
+            name.value = users[key].name;
+            bio.value = users[key].bio;
+            document.getElementById("edit").style.display = "block";
+            document.getElementById("out").style.display = "none";
+            document.getElementById("submit").addEventListener("click", function(){
+                users[key].name = name.value;
+                users[key].bio = bio.value;
+                toggleShowUser();
+            });
         }
         
     </script>
